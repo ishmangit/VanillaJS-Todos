@@ -1,5 +1,9 @@
+import { Todo } from '../classes';
+import { todoList } from '../index';
+
 // Referencias en el HTML
 const divTodoList = document.querySelector('.todo-list');
+const txtInput = document.querySelector('.new-todo');
 
 export const crearTodoHtml = ( todo ) => {
 
@@ -21,3 +25,18 @@ export const crearTodoHtml = ( todo ) => {
     return div.firstElementChild;
 
 }
+
+// Manejo de Eventos
+txtInput.addEventListener('keyup', ( event ) => {
+
+    if ( event.key === 'Enter' && txtInput.value.length ) {
+        const nuevoTodo = new Todo(txtInput.value);
+
+        todoList.nuevoTodo(nuevoTodo);
+        crearTodoHtml(nuevoTodo);
+
+        txtInput.value = '';
+    }
+
+});
+
