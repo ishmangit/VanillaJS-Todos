@@ -6,3 +6,5 @@ export const todoList = new TodoList();
 
 // Equivale a: forEach( todo => crearTodoHtml(todo))
 todoList.todos.forEach( crearTodoHtml );
+
+console.log(todoList);
