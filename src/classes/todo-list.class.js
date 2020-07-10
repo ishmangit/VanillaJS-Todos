@@ -14,10 +14,20 @@ export class TodoList {
 
     marcarCompletado( id ) {
 
+        for( const todo of this.todos ) {
+
+            // Comparación no estricta ya que comparamos un string con un number
+            if( todo.id == id ) {
+                todo.completado = !todo.completado;
+                break;
+            }
+
+        }
+
     }
 
     eliminarCompletados() {
-        
+
     }
 
 }
