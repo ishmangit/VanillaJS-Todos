@@ -10,6 +10,9 @@ export class TodoList {
 
     eliminarTodo( id ) {
 
+        // Comparación no estricta ya que comparamos un string con un number
+        this.todos = this.todos.filter( todo => todo.id != id );
+
     }
 
     marcarCompletado( id ) {
